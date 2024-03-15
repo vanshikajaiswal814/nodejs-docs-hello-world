@@ -4,7 +4,7 @@ node {
   }
   stage('SonarQube Analysis') {
     def scannerHome = tool 'SonarQube';
-    withSonarQubeEnv(credentialsId: 'sonarhii',installationName: 'sonar') {
+    withSonarQubeEnv('sonar') {
       sh "${scannerHome}/sonar-scanner"
     }
   }
